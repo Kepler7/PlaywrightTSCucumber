@@ -1,0 +1,28 @@
+{
+  "name": "playwrightcucumberts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npx ts-node src/helper/report/init.ts",
+    "test": "cross-env ENV=prod cucumber-js test || true",
+    "posttest": "npx ts-node src/helper/report/report.ts",
+    "test:failed": "cucumber-js test -p rerun @rerun.txt"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.1.0",
+    "@playwright/test": "^1.32.3",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^11.1.1",
+    "multiple-cucumber-html-reporter": "^3.3.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "winston": "^3.8.2"
+  }
+}
